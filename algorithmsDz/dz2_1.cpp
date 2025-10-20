@@ -6,7 +6,6 @@
 #include <random>
 using namespace std;
 
-
 vector<int> smooth_Nums(int max_value) 
 {
     vector<int> sequence;
@@ -46,13 +45,10 @@ void shell_sort ( vector <int> &a )
     }
 }
 
-
-
-
 int main()
 {
     mt19937 mt(time(nullptr));
-    for(int N = 1000; N <= 1'000'000; N *= 10)
+    for(int N = 1000; N <= 10000; N *= 10)
     {
         vector<int> vec(N);
         for(int i = 0; i < N; i++) vec[i] = mt();
@@ -70,6 +66,7 @@ int main()
         elapsed = end - start;
         cout << "<algorithm> sort for size n " << N << " time elapsed " << elapsed.count() << endl;
         //for(int i = 0; i < vec.size(); i++) cout << vec[i] << " ";
+        if (vec_copy == vec) cout << endl <<  "ok ";
     }
 
 }

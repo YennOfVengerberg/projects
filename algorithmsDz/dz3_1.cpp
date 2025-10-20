@@ -47,13 +47,13 @@ void modifiedMergeSort(vector<int> &vec, int left, int right, int threshold)
 {
     if (right - left + 1 <= threshold) insertionSort(vec);
     else {
-        if (left < right){
+        if (left < right) {
             int mid = left + (right - left) / 2;
             modifiedMergeSort(vec, left, mid, threshold);
             modifiedMergeSort(vec, mid + 1, right, threshold);
             merge(vec, left, mid, right);
         }
-    }
+    } 
 }
 
 int main()

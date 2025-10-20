@@ -76,11 +76,11 @@ int main() {
         vec_ind[i] = i;
     }
 
-    for(int i = 0; i < n; i++) {
+    /* for(int i = 0; i < n; i++) {
         cout << vec_nums[i] << " ";
         cout << vec_ind[i] << " ";
     }
-    cout << endl;
+    cout << endl; */
 
     modifiedMergeSortWIndex(vec_nums, 0, n-1, 100, vec_ind );
     for(int i = 0; i < n; i++) cout << vec_nums[i] << " ";
