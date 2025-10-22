@@ -4,7 +4,7 @@
 #include <iostream>
 
 namespace io {
-    void printer(const std::string str, int *vec, const int n);
-    void inp(const std::string text, int &n);
+    void print(const std::string str, int *array, const int array_size);
+    void input(const std::string text, int &n);
 }
 #endif

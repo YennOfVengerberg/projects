@@ -1,18 +1,19 @@
 #include <random>
-#include "sort.hpp"
 #include "io.hpp"
+#include "sort.hpp"
 
 int main() {
-    int size;
-    int max_roof;
-    io::inp("Введите размер ", size);
-    int *vec = new int[size];
-    io::inp("Введите максимум числа ", max_roof);
-    double threshold = sqrt(size);
+    int array_size;
+    int num_limit;
+    io::input("Введите размер ", array_size);
+    io::input("Введите максимальное число ", num_limit);
+    double threshold = sqrt(array_size);
     std::mt19937 mt(time(0));
 
-    for(int i = 0; i < size; i++) vec[i] = mt() % max_roof;
-    io::printer("До сортировки ", vec, size);
-    sorts::modifiedMergeSort(vec, 0, size - 1, threshold, size);
-    io::printer("После сортировки ", vec, size); 
+    int *array = new int[array_size];
+    for(int i = 0; i < array_size; i++) array[i] = mt() % num_limit;
+
+    io::print("До сортировки ", array, array_size);
+    sorts::modifiedMergeSort(array, 0, array_size - 1, threshold, array_size);
+    io::print("После сортировки ", array, array_size); 
 }
